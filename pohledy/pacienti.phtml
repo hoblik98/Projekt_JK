@@ -1,0 +1,33 @@
+<h2>Aktuální pacienti Dr. House</h2>
+
+<a href="novyPacient">Pokud se nevidíte, zapište se.</a>
+
+<?php
+echo('<h2>Uživatelé</h2><table border="1">');
+foreach ($pacienti as $pacient) {
+    echo('<tr><td>' . htmlspecialchars($pacient['jmeno']));
+    echo('</td><td>' . htmlspecialchars($pacient['prijmeni']));
+    $datum = date("d.m.Y", strtotime($pacient['datum_narozeni']));
+    echo('</td><td>' . htmlspecialchars($pacient));
+    echo('</td><td>' . htmlspecialchars($pacient['pocet_clanku']));
+    echo('</td></tr>');
+}
+echo('</table>');
+
+?>
+
+
+
+
+<!-- <table>
+    <?php foreach ($pacienti as $pacient) : ?>
+        <tr>
+            <td>
+                <?= print $pacient['jmeno'] ?>
+                <?= print $pacient['prijmeni'] ?>
+                <?= print $pacient['vek'] ?>
+                <?= print $pacient['telefon'] ?>
+            </td>
+        </tr>
+    <?php endforeach?>
+</table> -->

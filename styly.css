@@ -73,12 +73,13 @@ footer a{
 h1 {
     text-align: center;
     color: #444444;
-    text-shadow: 1px 1px 1px #aaaaaa;
+    text-shadow: 3px 3px 3px #aaaaaa;
+    font-size: 2.5em;
 }
 
 
 article {
-    text-shadow: 3px 3px 3px #aaaaaa;
+    /* text-shadow: 3px 3px 3px #aaaaaa; */
     max-width: 960px;
     min-height: 600px;
     margin: 0 auto;
@@ -151,7 +152,7 @@ input[type="submit"]:hover {
     cursor: pointer;
 }
 
-input[type="text"], input[type="email"], input[type="password"]{
+input[type="text"], input[type="email"], input[type="password"], input[type="date"]{
     width: 250px;
     border-radius: 5px;
     border: 1p solid grey;

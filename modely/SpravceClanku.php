@@ -33,9 +33,9 @@ class SpravceClanku
     public function ulozClanek(int|bool $id, array $clanek) : void 
     {
         if (!$id)
-            Db::vloz('clanky', $clanek);
+            Db::vloz('blog', $clanek);
         else
-            Db::zmen('clanky', $clanek, 'WHERE clanky_id = ?', array($id));
+            Db::zmen('blog', $clanek, 'WHERE clanky_id = ?', array($id));
     }
 
     public function odstranClanek(string $url) : void 

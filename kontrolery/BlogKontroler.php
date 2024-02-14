@@ -1,6 +1,6 @@
 <?php
 
-class ClanekKontroler extends Kontroler
+class BlogKontroler extends Kontroler
 {
     public function zpracuj(array $parametry): void
     {
@@ -40,8 +40,8 @@ class ClanekKontroler extends Kontroler
         } else {
             // není zadáno url článku, vypsat všechny
             $clanky = $spravceClanku->vratClanky();
-            $this->data['clanky'] = $clanky;
-            $this->pohled = 'clanky';
+            $this->data['blog'] = $clanky;
+            $this->pohled = 'blog';
         }
     }
 }

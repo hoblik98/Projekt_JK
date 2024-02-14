@@ -17,7 +17,7 @@ function autoloadFunkce (string $trida) : void
 spl_autoload_register("autoloadFunkce");
 
 // připojení k databázi
-Db::pripoj("localhost", "root", "", "mvc_db");
+Db::pripoj("localhost", "root", "", "projekt_db");
 
 // instance smerovace
 $smerovac = new SmerovacKontroler();

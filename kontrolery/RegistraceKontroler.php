@@ -17,6 +17,8 @@ class RegistraceKontroler extends Kontroler
                 $this->pridejZpravu($chyba->getMessage());
             }
         }
+
+        
         // Nastavení šablony
         $this->pohled = 'registrace';
     }
