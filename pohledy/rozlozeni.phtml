@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="cs-cz">
+<head>
+    <base href="/MVC"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="<?= $popis ?>"/>
+    <meta name="keywords" content="<?= $klicova_slova ?>"/>
+    <meta name="author" content="Juldra">
+    <link rel="stylesheet" href="styly.css" type="text/css"/>
+    <link rel="shortcut icon"   href="obrázky/9652587_diamond_origami_paper_craft_creative_icon.ico"/>
+    <title><?= $titulek ?></title>
+</head>
+<body>
+    <header>
+        <a href="domu" id="logo"><img src="/obrazky/logo4.png" alt="logo"></a>
+    
+        <nav>
+            <ul >
+                <li><a href="domu">Domu</a></li>
+                <li><a href="clanek">Články</a></li>
+                <li><a href="kontakt">Kontakt</a></li>
+                <li><a href="prihlaseni">Přihlašte se</a></li>
+            </ul>
+        </nav>
+    </header>
+    <br clear="both"/>
+    <?php foreach ($zpravy as $zprava) : ?>
+        <p class="zprava"><?= $zprava ?></p>
+    <?php endforeach ?>
+
+
+    <article>
+        <?php $this->kontroler->vypisPohled(); ?>
+
+    </article>
+
+    <footer>
+        <p>Copyright &copy; <?php print date('Y'); ?> JulDra</p>
+    </footer>
+    
+</body>
+</html>

@@ -1,0 +1,18 @@
+<h1>Cítíte se nemocní?</h1>
+
+<p>Zašlete nám zprávu a posoudíme jestli Váš řípad vezmeme</p>
+
+<form method="post" id="form-email">
+    <label for="">
+        Vaše emailová adresa <br/>
+        <input type="email" name="email" required="required" value= "<?php if(isset($_POST['email'])) echo(htmlspecialchars($_POST['email'])); ?>">
+    </label><br/>
+    <label for="">
+        Antispam - zadejte aktuální rok <br/>
+        <input type="text" name="rok" required="required">
+    </label><br/>
+    <label for="">
+        <textarea name="zprava" id="" cols="30" rows="10"><?php if(isset($_POST['zprava'])) echo(htmlspecialchars($_POST['zprava'])) ?></textarea>
+    </label><br/>
+    <input type="submit" value="Odeslat">
+</form>
