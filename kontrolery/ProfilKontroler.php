@@ -37,7 +37,7 @@ class ProfilKontroler extends Kontroler
         $this->data['telefon'] = $uzivatel['telefon'];
 
         if (empty($uzivatel['datum_narozeni'])) {
-            $uzivatel['datum_narozeni'] = "Není vyplněno - doplňte!";
+            $uzivatel['datum_narozeni'] = "Není vyplněno. Požádejte administrátora webu o doplnění. :) Možnost editování vlastního profilu je v procesu tvorby. :)";
         }
         $this->data['datum_narozeni'] = $uzivatel['datum_narozeni'];
 
