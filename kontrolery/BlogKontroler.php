@@ -1,7 +1,17 @@
 <?php
 
+/**
+ * Kontroler umožňující vypisování, úpravu, mazání článků
+ */
 class BlogKontroler extends Kontroler
 {
+    /**
+     * Zpracování poskytnutých údajů
+     * 
+     * @param array $parametry
+     * 
+     * @return void
+     */
     public function zpracuj(array $parametry): void
     {
             // Vytvoření instance modelu, který nám umožní pracovat s články
@@ -34,14 +44,19 @@ class BlogKontroler extends Kontroler
             // Naplnění proměnných pro šablonu
             $this->data['titulek'] = $clanek['titulek'];
             $this->data['obsah'] = $clanek['obsah'];
+            $this->data['url'] = $clanek['url'];
 
             // Nastavení šablony
             $this->pohled = 'clanek';
         } else {
             // není zadáno url článku, vypsat všechny
             $clanky = $spravceClanku->vratClanky();
+
+            //proměnné pro šablonu
             $this->data['blog'] = $clanky;
             $this->pohled = 'blog';
+            $this->hlavicka['titulek'] = 'Blog';
+            
         }
     }
 }

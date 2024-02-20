@@ -1,7 +1,17 @@
 <?php
 
+/**
+ * Kontroler umožnující editaci článků
+ */
 class EditorKontroler extends Kontroler
 {
+    /**
+     * Zpracování údajů pomocí kontroleru
+     * 
+     * @param array $parametry
+     * 
+     * @return void
+     */
     public function zpracuj(array $parametry): void
     {
         // ověření zda je užvatel admin - jenom ti mají přístup k editaci

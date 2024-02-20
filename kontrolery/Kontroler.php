@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Základní kontroler, ze které další dědí metody
+ * 
+ */
 abstract class Kontroler
 {
     protected array $data = array ();
@@ -8,6 +12,10 @@ abstract class Kontroler
 
     abstract function zpracuj(array $parametry) : void;
 
+    /**
+     * Vložen pohledu do rozložení
+     * @return void
+     */
     public function vypisPohled() : void 
     {
         if ($this->pohled){
@@ -19,6 +27,12 @@ abstract class Kontroler
         
     }
     
+    /**
+     * Přesměrování
+     * @param string $url
+     * 
+     * @return never
+     */
     public function presmeruj(string $url) : never 
     {
         header ("Location: /$url");
@@ -28,6 +42,13 @@ abstract class Kontroler
     }
 
     // ošetření proti útoku XSS - utomatické projetí proměnných htmlspecilchars funkcí
+    /**
+     * Ošetření proti útoku XSS
+     * 
+     * @param mixed|null $x
+     * 
+     * @return mixed
+     */
     private function osetri(mixed $x = null) : mixed 
     {
         if(!isset($x))
@@ -43,7 +64,14 @@ abstract class Kontroler
             return $x;
     }
 
-    // vypisování zpráv pro uživatele
+    
+    /**
+     * Přidá konkrétní zpávu po úkonu
+     * 
+     * @param string $zprava
+     * 
+     * @return void
+     */
     public function pridejZpravu(string $zprava) : void 
     {
         if(isset($_SESSION['zpravy']))
@@ -53,6 +81,12 @@ abstract class Kontroler
         
     }
 
+    
+    /**
+     * Vypíše uživateli zprávy na obrazovce
+     * 
+     * @return array
+     */
     public function vratZpravy() : array 
     {
         if(isset($_SESSION['zpravy'])) {
@@ -64,6 +98,13 @@ abstract class Kontroler
         
     }
 
+    /**
+     * Ověří zda je uživatel admin nebo ne
+     * 
+     * @param bool $admin
+     * 
+     * @return void
+     */
     public function overUzivatele(bool $admin = false): void
     {
         $spravceUzivatelu = new SpravceUzivatelu();

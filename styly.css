@@ -17,7 +17,6 @@ html {
 
 body {
     font: 14px "Poppins";
-    color: #414042;
     background: white;
     box-sizing: border-box;
     margin: 0;
@@ -28,8 +27,7 @@ body {
 body > header{
     height: 100px;
     width: 100%;
-    background-color: black;
-    color: white;
+    background-color: white;
     display: flex;
     justify-content: space-evenly;
     z-index: 1;
@@ -47,9 +45,10 @@ body > header{
 }
 
 #logo img {
-    max-height: 1500%;
+    max-height: 300px;
     width: auto;
     float: left;
+    margin-left: 20px;
 }
 
 
@@ -75,20 +74,38 @@ h1 {
     color: #444444;
     text-shadow: 3px 3px 3px #aaaaaa;
     font-size: 2.5em;
+    
 }
 
 
 article {
-    /* text-shadow: 3px 3px 3px #aaaaaa; */
-    max-width: 960px;
-    min-height: 600px;
+    
+    max-width: 800px;
+    min-height: 550px;
     margin: 0 auto;
-    padding: 50px 50px 10px 50px;
+    padding: 20px 50px 100px 50px;
+}
+
+article header {
+    margin: auto auto 60px auto;
+}
+
+.kurziva {
+    font-style: italic;
 }
 
 .centrovany {
     text-align: center;
+    
 }
+
+
+.clanek {
+    text-decoration: none;
+    color: #484842;
+
+}
+
 
 article header{
     height: 80px;
@@ -98,9 +115,10 @@ h1, h2, h3, h4, h5, h6 {
     color: black;
 }
 
-article h1, article h2, article h3, article h3, article h4, article h5, article h6 {
+article h1, article h2, article h3, article h3, article h4, article h5, article h6  {
     color: black;
     padding: 5px 0;
+    
 }
 
 nav ul {
@@ -113,29 +131,48 @@ nav ul {
 
 nav ul li {
     float: left;
-    margin-right: 15px;
+    margin-right: 25px;
     font-size: 1.2em ;
     line-height: 4.3em ;
     padding: 0 25px;
 }
 
 nav ul a {
-    background-color: black;
-    color: white;
-    padding: 8px 10px 38px 10px;
-    border-radius: 3px 3px 0px 0px;
+    color: black;
+    padding: 8px 10px;
+    border-radius: 6px 6px 6px 6px;
     text-decoration: none;
     text-transform: uppercase;
+    font-weight: lighter;
     border: none;
     cursor: pointer;
 }
 
 
 nav a:hover {
-    background-color: white;
+    text-decoration: none;
+    font-weight: normal;
     color: black;
-    text-decoration:none;
-    box-shadow: 4px -1px 0px 1px #b6b0b0;
+}
+
+.tlacitkoPrihlas {
+    background-color: #bcbcbc;
+    border-radius: 7px;
+}
+
+.tlacitkoPrihlas:hover {
+    background-color: #000000;
+    color: white;
+}
+
+.tlacitkoProfil {
+    background-color: #bcbcbc;
+    border-radius: 7px;
+}
+
+.tlacitkoProfil:hover {
+    background-color: #000000;
+    color: white;
 }
 
 input[type="submit"] {
@@ -181,4 +218,75 @@ textarea{
 }
 
 
+/* CSS na profil */
+.image-container {
+    position: relative;
+}
+
+.image {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+
+.middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.image-container:hover .image {
+    opacity: 0.3;
+}
+
+.image-container:hover .middle {
+    opacity: 1;
+}
+
+/* CSS na domovskou stránku */
+.team4 {
+	color: #8d97ad;
+  font-weight: 300;
+}
+
+.team4 h1, .team4 h2, .team4 h3, .team4 h4, .team4 h5, .team4 h6 {
+  color: #3e4555;
+}
+
+.team4 .font-weight-medium {
+	font-weight: 500;
+}
+
+.team4 h5 {
+    line-height: 22px;
+    font-size: 18px;
+}
+
+.team4 .subtitle {
+    color: #8d97ad;
+    line-height: 24px;
+		font-size: 13px;
+}
+
+.team4 ul li a {
+  color: #8d97ad;
+  padding-right: 15px;
+  -webkit-transition: 0.1s ease-in;
+  -o-transition: 0.1s ease-in;
+  transition: 0.1s ease-in;
+}
+
+.team4 ul li a:hover {
+  -webkit-transform: translate3d(0px, -5px, 0px);
+  transform: translate3d(0px, -5px, 0px);
+	color: #316ce8;
+}
 

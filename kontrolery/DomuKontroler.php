@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Kontroler vypisující domovskou stránku
+ */
 class DomuKontroler extends Kontroler
 {
     public function zpracuj(array $parametry): void
@@ -9,6 +12,12 @@ class DomuKontroler extends Kontroler
             'klicova_slova' => 'lékař, pacienti, léčitelství',
             'popis' => 'Řešíme náročné zdravotní případy.',
         );
+        
+        
+
+        //šablona
         $this->pohled = 'domu';
+
+        
     }
 }

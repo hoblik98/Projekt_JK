@@ -1,21 +1,49 @@
-<h1>Registrace</h1>
+<div class="border border-4 rounded-3 shadow p-5 " >
+    <h1 class="display-5">Registrace</h1>
 
-<form method="post">
-    <label>
-        Jméno<br />
-        <input type="text" name="jmeno" />
-    </label><br />
-    <label>
-        Heslo<br />
-        <input type="password" name="heslo" />
-    </label><br />
-    <label>
-        Heslo znovu<br />
-        <input type="password" name="heslo_znovu" />
-    </label><br />
-    <label>
-        Zadejte aktuální rok (antispam)<br />
-        <input type="text" name="rok" />
-    </label><br />
-    <input type="submit" value="Registrovat" />
-</form>
+    <form method="post" class="ms-5">
+        <div class="mb-3 row mt-5">
+            <label for="exampleInputEmail1" class="col-sm-2 col-form-label mx-5">Jméno</label>
+            <input class="form-control mx-5" type="text" name="jmeno" pattern="[A-Za-zÀ-ž]{2,20}" placeholder="Karel" aria-label="default input example" required="required" value= "<?php if(isset($_POST['jmeno'])) echo(htmlspecialchars($_POST['jmeno'])); ?>" >
+        </div>
+        <div class="mb-3 row">
+            <label for="exampleInputEmail1" class="col-sm-2 col-form-label mx-5">Příjmení</label>
+            <input class="form-control mx-5" type="text" name="prijmeni" pattern="[A-Za-zÀ-ž]{2,20}" placeholder="Novák" aria-label="default input example" required="required" value= "<?php if(isset($_POST['prijmeni'])) echo(htmlspecialchars($_POST['prijmeni'])); ?>">
+        </div>
+        <div class="mb-3 row">
+            <label for="exampleInputEmail1" class="col-sm-2 col-form-label mx-5">Email</label>
+            <input type="email" name="email" pattern="[a-zA-Z0-9_-\.]{1,}@[a-zA-Z0-9_-\.]{1,15}.[A-Za-z]{2,7}" placeholder="name@example.com" title="Špatně zadaný email! Formát name@seznam.com" class="form-control mx-5" id="exampleInputEmail1" aria-describedby="emailHelp" required="required" value= "<?php if(isset($_POST['email'])) echo(htmlspecialchars($_POST['email'])); ?>">
+        </div>
+        <div class="mb-3 row">
+            <label for="exampleInputEmail1" class="col-sm-2 col-form-label mx-5">Telefon</label>
+            <input type="text" name="telefon" pattern="[+420]{4}[0-9\s]{8,12}" title="Špatně zadané telefonní číslo! Formát +420 753 951 456" placeholder="+420 753 951 456" class="form-control mx-5" id="exampleInputEmail1" aria-describedby="emailHelp" required="required" value= "<?php if(isset($_POST['telefon'])) echo(htmlspecialchars($_POST['telefon'])); ?>">
+        </div>
+        <div class="mb-3 row">
+            <label for="exampleInputPassword1" class="col-sm-2 col-form-label mx-5">Heslo</label>
+            <input type="password" name="heslo" pattern="{6,}" title="Heslo musí mít minimálně 6 znaků!" class="form-control mx-5" id="exampleInputPassword1" required="required">
+        </div>
+        <div class="mb-3 row">
+            <label for="exampleInputPassword1" class="col-sm-2 col-form-label mx-5">Heslo znovu</label>
+            <input type="password" name="heslo_znovu" class="form-control mx-5" id="exampleInputPassword1" required="required">
+        </div>
+        <div class="mb-3 row">
+            <label for="exampleInputEmail1" class="col-sm-2 col-form-label mx-5">Antispam</label>
+            <input class="form-control mx-5" type="text" name="antispam" placeholder="Zadejte aktuální rok" aria-label="default input example" required="required">
+        </div>
+        <div class="ms-5 mb-5 mt-4">
+            <div class="form-check form-check-inline ">
+                <input class="form-check-input ms-5" type="radio" name="pacient" id="inlineRadio1" value="0">
+                <label class="form-check-label ms-2" for="inlineRadio1">Pacient</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input ms-5" type="radio" name="lekar" id="inlineRadio2" value="1">
+                <label class="form-check-label ms-2" for="inlineRadio2">Lékař</label>
+            </div>
+        </div>
+        <input  type="submit" value="Registrovat" />
+    </form>
+    
+</div>
+
+
+

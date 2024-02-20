@@ -1,0 +1,26 @@
+<div  class="border border-4 rounded-3 shadow p-5 ">
+    <a class="text-muted font-weight-light" href="pacienti">Zpět</a>
+    <h1 class="display-5">Editor pacienta</h1>
+    <h3 class="text-center"><?= $jmeno . " " . $prijmeni ?></h3>
+
+    <form action="" method="post">
+        <input type="hidden" name="pacienti_id" value="<?=  $pacient['pacienti_id'] ?>"/>
+        <label for="">
+            Jméno<br/>
+            <input class="form-control" type="text" name="jmeno" pattern="[A-Za-zÀ-ž]{2,20}" value="<?= htmlspecialchars($pacient['jmeno']) ?>"/>
+        </label><br/>
+        <label for="">
+            Příjmení<br/>
+            <input class="form-control" type="text" name="prijmeni" pattern="[A-Za-zÀ-ž]{2,20}" value="<?= htmlspecialchars($pacient['prijmeni']) ?>"/>
+        </label><br/>
+        <label for="">
+            Rodné číslo<br/>
+            <input class="form-control" type="text" name="rodne_cislo" pattern="[0-9]{6}/[0-9]{4}" title="Špatně zadané rodné číslo! Formát: 981456/1234" value="<?= htmlspecialchars($pacient['rodne_cislo']) ?>"/>
+        </label><br/>
+        <label for="">
+            Telefon<br/>
+            <input class="form-control" type="text" name="telefon" pattern="[+420]{4}[0-9\s]{8,12}" title="Špatně zadané telefonní číslo! Formát +420 753 951 456" value="<?= htmlspecialchars($pacient['telefon']) ?>"/>
+        </label><br/>
+        <input onclick="return confirm('Před potvrzením, ověřte správnost údajů.')" type="submit" value="Uložit Pacienta">   
+    </form>
+</div>

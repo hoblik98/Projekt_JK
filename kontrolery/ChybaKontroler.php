@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Kontroler, který hlídá chyby a v příadě přesměrovává na chybovou stránku
+ */
 class ChybaKontroler extends Kontroler
 {
 

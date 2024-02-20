@@ -1,33 +1,52 @@
 <!DOCTYPE html>
 <html lang="cs-cz">
 <head>
-    <base href="/MVC"/>
+    <base href="/Projekt_JK"/>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="<?= $popis ?>"/>
     <meta name="keywords" content="<?= $klicova_slova ?>"/>
     <meta name="author" content="Juldra">
     <link rel="stylesheet" href="styly.css" type="text/css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> 
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="shortcut icon"   href="obrázky/9652587_diamond_origami_paper_craft_creative_icon.ico"/>
     <title><?= $titulek ?></title>
 </head>
 <body>
-    <header>
-        <a href="domu" id="logo"><img src="/obrazky/logo4.png" alt="logo"></a>
-    
-        <nav>
-            <ul >
-                <li><a href="domu">Domu</a></li>
-                <li><a href="blog">Blog</a></li>
-                <li><a href="kontakt">Kontakt</a></li>
-                <li><a href="pacienti">Pacienti</a></li>
-            </ul>
-        </nav>
-    </header>
-    <br clear="both"/>
     <?php foreach ($zpravy as $zprava) : ?>
-        <p class="zprava"><?= $zprava ?></p>
+        <div class="alert alert-warning alert-dismissible fade show p-1" role="alert">
+        <?= $zprava ?>
+        <button type="button" class="btn-close p-1 m-1" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
     <?php endforeach ?>
+
+
+    <header>
+    
+    <a href="domu" id="logo"><img src="/obrazky/logo.png" alt="logo"></a>
+            <nav >
+                <ul>
+                    <li><a href="domu">Domu</a></li>
+                    <li><a href="blog">Blog</a></li>
+                    <li><a href="kontakt">Kontakt</a></li>
+                    <?php if (!$uzivatel) : ?>
+                        <li><a class="tlacitkoPrihlas" href="prihlaseni">Přihlášení</a></li>
+                    <?php else: ?>
+                        <li><a class="tlacitkoProfil" href="profil">Profil</a></li>
+                    <?php endif ?>
+                    
+
+    
+                </ul>
+            </nav>
+    </header>
+
+    
+
+    
+    
+    <br clear="both"/>
 
 
     <article>
@@ -35,8 +54,13 @@
 
     </article>
 
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="../script.js" defer></script>
+
     <footer>
-        <p>Copyright &copy; <?php print date('Y'); ?> JulDra</p>
+        <p>Copyright &copy; <?php echo date('Y'); ?> JulDra</p>
     </footer>
     
 </body>

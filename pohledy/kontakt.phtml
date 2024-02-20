@@ -1,18 +1,23 @@
-<h1>Cítíte se nemocní?</h1>
-<p class="centrovany">Zanechte nám zprávu a posoudíme jestli Váš případ vezmeme.</p><br/>
+<div class="border border-4 rounded-3 shadow p-5" >
+    <h1 class="display-5">Cítíte se nemocní?</h1>
+    <p class="centrovany">Zanechte nám zprávu a posoudíme jestli Váš případ vezmeme.</p><br/>
 
-<form method="post" id="form-email">
-    <label for="">
-        Vaše emailová adresa <br/>
-        <input type="email" name="email" required="required" value= "<?php if(isset($_POST['email'])) echo(htmlspecialchars($_POST['email'])); ?>">
-    </label><br/>
-    <label for="">
-        Antispam - zadejte aktuální rok <br/>
-        <input type="text" name="rok" required="required">
-    </label><br/>
-    <label for="">
-        Popis Vašich příznaků a prozatimní postup léčby<br/>
-        <textarea name="zprava" id="" cols="30" rows="10"><?php if(isset($_POST['zprava'])) echo(htmlspecialchars($_POST['zprava'])) ?></textarea>
-    </label><br/>
-    <input type="submit" value="Odeslat">
-</form>
+    <form method="post" id="form-email">
+        <div class="mb-3 row">
+            <label for="exampleFormControlInput1" class="form-label">
+                Vaše emailová adresa</label>
+            <input type="email" name="email" required="required" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" value= "<?php if(isset($_POST['email'])) echo(htmlspecialchars($_POST['email'])); ?>">
+        </div>
+        <div class="mb-3 row"> 
+            <label for="exampleFormControlInput1" class="form-label">
+                Antispam</label>
+            <input type="text" name="rok" required="required" placeholder="Zadejte aktuální rok" class="form-control" id="exampleFormControlInput1">
+        </div>
+        <div class="mb-3 row">
+            <label for="exampleFormControlTextarea1" class="form-label">
+                Popis Vašich příznaků a prozatimní postup léčby</label>
+            <textarea name="zprava" class="form-control" id="exampleFormControlTextarea1" ><?php if(isset($_POST['zprava'])) echo(htmlspecialchars($_POST['zprava'])) ?></textarea>
+            <input class="btn" type="submit" value="Odeslat">
+        </div>
+    </form>
+</div>

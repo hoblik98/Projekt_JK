@@ -1,21 +1,33 @@
-<h2>Nový pacient</h2>
+<div class="border border-4 rounded-3 shadow p-5" >
+    <a class="text-muted font-weight-light" href="pacienti">Zpět</a>
+    <h1 class="display-5">Nový pacient</h1>
 
-<form method="post">
-            <label>
-                Jméno:<br />
-                <input type="text" name="jmeno" placeholder="Tomáš"/>
-            </label><br />
-            <label>
-                Příjmení:<br />
-                <input type="text" name="prijmeni" placeholder="Novotný" />
-            </label><br />
-            <label>
-                Datum narozeni:<br />
-                <input type="date" name="datum_narozeni" />
-            </label><br />
-            <label>
-                Telefonní číslo:<br />
-                <input type="text" name="telefonni_cislo" placeholder="+420 741 369 258" />
-            </label><br />
-            <input type="submit" value="Zapsat pacienta" name="submit"/>
-        </form>
+
+    <form method="post">
+        <div class="mb-3 row mt-5">
+            <label for="exampleInputEmail1" class="col-sm-3 col-form-label mx-5">Jméno</label>
+            <input class="form-control mx-5" type="text" name="jmeno" placeholder="Karel" pattern="[A-Za-zÀ-ž]{2,20}" aria-label="default input example" required="required">
+        </div>
+        <div class="mb-3 row">
+            <label for="exampleInputEmail1" class="col-sm-3 col-form-label mx-5">Příjmení</label>
+            <input class="form-control mx-5" type="text" name="prijmeni" placeholder="Novák" pattern="[A-Za-zÀ-ž]{2,20}" aria-label="default input example" required="required">
+        </div>
+        <div class="mb-3 row">
+            <label for="exampleInputEmail1" class="col-sm-3 col-form-label mx-5">Rodné číslo</label>
+            <input class="form-control mx-5" type="text" name="rodne_cislo" pattern="[0-9]{6}/[0-9]{4}" placeholder="981456/1234" title="Špatně zadané rodné číslo! Formát: 981456/1234" aria-label="default input example" required="required">
+        </div>
+        <!--zajišťuje funkce na vypočítání datumu narození
+             <div class="mb-3 row">
+            <label for="exampleInputEmail1" class="col-sm-3 col-form-label mx-5">Datum narození</label>
+            <input class="form-control mx-5" type="date" name="datum_narozeni" aria-label="default input example" required="required">
+        </div> -->
+        <div class="mb-3 row">
+            <label for="exampleInputEmail1" class="col-sm-3 col-form-label mx-5">Telefonní číslo</label>
+            <input class="form-control mx-5" type="text" name="telefonni_cislo" pattern="[+420]{4}[0-9\s]{8,12}" 
+            title="Špatně zadané telefonní číslo!" placeholder="+420 753 951 456" aria-label="default input example" required="required">
+        </div>
+        <div class="mb-2">
+            <input type="submit" value="Zapsat pacienta" />
+        </div>
+    </form>
+</div>

@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Kontroler zpracující kontatový formulář webu
+ */
 class KontaktKontroler extends Kontroler
 {
     public function zpracuj(array $parametry): void
